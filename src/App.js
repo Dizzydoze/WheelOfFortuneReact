@@ -33,8 +33,10 @@ export default function Game(){
     const [saved, setSaved] = useState(false);
 
 
-
-    // Input component call this function when form is submitted
+    /**
+     * Input component call this function when form is submitted
+     * @param input content input by user
+     */
     function handleSubmit(input){
         // if valid, go process, if not, do nothing
         const valid = checkValidation(input, previousGuesses);
@@ -135,6 +137,7 @@ export default function Game(){
     )
 }
 
+
 /**
  * Form component, handle form submission and get guess input
  * @param onFormSubmit  function being called when submit event triggered
@@ -192,6 +195,7 @@ function HiddenPhrase({hiddenPhrase}){
     )
 }
 
+
 /**
  * Display component, show logs of current game
  * @param display show display state in HTML
@@ -203,6 +207,7 @@ function Display({display}){
         <div className="display">{display}</div>
     )
 }
+
 
 /**
  * helper method, get random phrase from the list
@@ -218,6 +223,7 @@ function randomPhrase(){
     return phraseList[ranIdx];
 }
 
+
 /**
  * helper method, gen hiddenPhrase
  * @param phrase the covered phrase
@@ -226,6 +232,7 @@ function randomPhrase(){
 function generateHiddenPhrase(phrase) {
     return phrase.replace(/[a-zA-Z]/g, '*');
     }
+
 
 /**
  * helper method, process guess input, good or bad guess
@@ -251,6 +258,3 @@ function processGuess(phrase, hiddenPhrase, input){
     // good guess, return new hiddenPhrase for Game component to set value
     return newHiddenPhrase;
 }
-
-
-

@@ -12,9 +12,7 @@ function User({userId, userName, setUserName}) {
      * save current userName related to the userId
      */
     function saveUser(){
-
         const userPostUrl = `${serverUrl}/saveUser`
-
         const userPostData = {
             userId,
             userName
@@ -29,7 +27,10 @@ function User({userId, userName, setUserName}) {
             })
     }
 
-    // search current userName related to current userId, if it doesn't exist, save new userName
+    /**
+     * search current userName related to current userId, if it doesn't exist, save new userName
+     * @param event
+     */
     function updateUser(event) {
         // KEY! this prevents the whole page being reloaded everytime we submit the form
         event.preventDefault();

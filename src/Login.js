@@ -6,7 +6,6 @@ import {getAuth, GoogleAuthProvider, signInWithRedirect} from 'firebase/auth';
 
 function Login({onLogin}) {
 
-
     const firebaseConfig = {
         apiKey: "AIzaSyCS1K-wWVKsRrdoT4bGOMK3JPBS49vA9Qs",
         authDomain: "wheeloffortunereactversion.firebaseapp.com",
@@ -44,7 +43,6 @@ function Login({onLogin}) {
             console.log("No user is signed in.");
         }
     });
-
 
     return (
         <div>
