@@ -1,13 +1,18 @@
-import WOF from "./WOFLogo.avif";
+function Image({src, x, y}){
 
-/**
- * seperated image component
- * @returns {JSX.Element}
- * @constructor
- */
-function Image(){
     return (
-        <img className="image" src={WOF} alt="WheelOfFortune"></img>
+        <>
+            {(x)
+                ? <img className='image' alt='gif' src={src}
+                       style={{position: "fixed",
+                           left: `${x}%`,
+                           top: `${y}%`,
+                           // bottom: 90,
+                           width: '235px',
+                           height: '235px'}}></img>
+                : <img className='image' alt='gif' src={src} ></img>
+            }
+        </>
     )
 }
 
